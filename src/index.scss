@@ -1,0 +1,37 @@
+@import '@/vars';
+
+*,
+*::after,
+*::before {
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 16px;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+
+    background-color: hsl(0, 0%, 97%);
+    margin: 0;
+}
+
+.container {
+    max-width: $container-width + $main-shift * 2;
+    margin: 0 auto;
+    padding: 0 $main-shift;
+}
+
+.primary-link {
+    font-size: 1.2rem;
+    color: #fff !important;
+    text-decoration: none;
+    font-weight: 700;
+
+    padding: 1rem 2.5rem;
+    background-color: $color-primary;
+    border: none;
+    border-radius: 2rem;
+    cursor: pointer;
+}

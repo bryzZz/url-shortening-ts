@@ -1,0 +1,28 @@
+@import '@/vars';
+
+.PreFooter {
+    background-image: url(images/bg-boost-mobile.svg);
+    background-color: $color-primary-alt;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+
+    &__container {
+        text-align: center;
+
+        padding-top: 3rem;
+        padding-bottom: 4rem;
+    }
+
+    &__title {
+        color: #fff;
+        font-size: 2rem;
+        line-height: 1.1em;
+        margin: 0;
+        margin-bottom: 2rem;
+    }
+
+    @media screen and (min-width: 767px) {
+        background-image: url(images/bg-boost-desktop.svg);
+    }
+}

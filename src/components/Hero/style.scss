@@ -1,0 +1,64 @@
+@import '@/vars';
+
+.Hero {
+    &__container {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 2.5rem;
+
+        padding-bottom: 4rem;
+
+        overflow-x: hidden;
+    }
+
+    &__img {
+        padding-left: $main-shift;
+        width: 110%;
+    }
+
+    &__content {
+        padding: 0 $main-shift;
+
+        text-align: center;
+    }
+
+    &__title {
+        font-size: 2.6rem;
+        line-height: 1.1em;
+        margin: 0;
+        color: $color-title;
+    }
+
+    &__text {
+        font-size: 1.2em;
+        line-height: 1.5em;
+        color: $color-text-alt;
+    }
+
+    @media screen and (min-width: 767px) {
+        &__container {
+            grid-template-columns: repeat(2, 1fr);
+            gap: 2.5rem;
+
+            max-width: $container-width + $main-shift * 2;
+            width: 100%;
+            margin: 0 auto;
+            padding: 2rem $main-shift 2.5rem;
+        }
+
+        &__content {
+            text-align: left;
+            padding: 0;
+        }
+
+        &__text {
+            margin-bottom: 3rem;
+        }
+
+        &__img {
+            order: 2;
+            padding-left: 0;
+            width: 100%;
+        }
+    }
+}

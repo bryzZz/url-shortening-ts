@@ -1,0 +1,84 @@
+@import '@/vars';
+
+.Footer {
+    background-color: hsl(255, 11%, 22%);
+
+    &__container {
+        display: grid;
+        grid-template-columns: 1fr;
+        justify-content: center;
+
+        text-align: center;
+
+        padding: 3rem 1.5rem;
+    }
+
+    &__logo {
+        path {
+            fill: #fff;
+        }
+    }
+
+    &__item {
+        margin-bottom: 2.5rem;
+
+        &-title {
+            font-size: 1.2rem;
+            color: #fff;
+
+            margin: 0;
+            margin-bottom: 1.2rem;
+        }
+    }
+
+    &__menu {
+        padding: 0;
+        list-style: none;
+
+        &-item {
+            margin: 0;
+            margin-bottom: 0.5rem;
+        }
+
+        &-link {
+            color: $color-text-alt;
+            text-decoration: none;
+            padding: 0.3rem;
+
+            &:hover {
+                color: $color-primary;
+            }
+        }
+    }
+
+    &__social {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 0.5rem;
+
+        &-item {
+            padding: 1rem;
+
+            &:hover path {
+                fill: $color-primary;
+            }
+        }
+    }
+
+    @media screen and (min-width: 767px) {
+        &__container {
+            grid-template-columns: 2fr repeat(4, 1fr);
+        }
+
+        &__item {
+            text-align: left;
+            margin-bottom: 0;
+            margin-right: 1rem;
+        }
+
+        &__social {
+            align-items: flex-start;
+        }
+    }
+}

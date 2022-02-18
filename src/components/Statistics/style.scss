@@ -1,0 +1,140 @@
+@import '@/vars';
+
+.Statistics {
+    &__container {
+        padding-top: 2rem;
+        padding-bottom: 5rem;
+        text-align: center;
+    }
+
+    &__title {
+        font-size: 2rem;
+        line-height: 1.1em;
+        margin: 0;
+        margin-bottom: 1rem;
+        color: $color-title;
+    }
+
+    &__text {
+        font-size: 1.2em;
+        line-height: 1.5em;
+        color: $color-text-alt;
+
+        max-width: 500px;
+        margin: 0 auto 2rem;
+
+        margin-bottom: 4rem;
+    }
+
+    &__items {
+        --gap: 5rem;
+
+        display: flex;
+        flex-direction: column;
+        gap: var(--gap);
+    }
+
+    &__item {
+        padding: 0 1.5rem 2rem;
+        background-color: #fff;
+        border-radius: 0.2rem;
+
+        &:nth-child(2) {
+            position: relative;
+
+            &::before,
+            &::after {
+                content: '';
+
+                position: absolute;
+                left: 50%;
+
+                width: 0.8rem;
+                height: var(--gap);
+
+                background-color: $color-primary;
+            }
+
+            &::before {
+                top: 0%;
+                transform: translateX(-50%) translateY(-100%);
+            }
+
+            &::after {
+                bottom: 0%;
+                transform: translateX(-50%) translateY(100%);
+            }
+        }
+
+        &-iconBlock {
+            width: 80px;
+            height: 80px;
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            margin: 0 auto;
+            padding: 1rem;
+            border-radius: 50%;
+            background-color: $color-primary-alt;
+            transform: translateY(-50%);
+        }
+
+        &-title {
+            font-size: 1.3rem;
+            line-height: 1.1em;
+            color: $color-title;
+            margin: 0;
+        }
+
+        &-text {
+            font-size: 0.9em;
+            color: $color-text-alt;
+        }
+    }
+
+    @media screen and (min-width: 767px) {
+        &__container {
+            padding-bottom: 7rem;
+        }
+
+        &__items {
+            flex-direction: row;
+            --gap: 3rem;
+        }
+
+        &__item {
+            padding: 0 1rem 2rem;
+
+            &:nth-child(2) {
+                transform: translateY(1.5rem);
+
+                &::before,
+                &::after {
+                    top: 50%;
+
+                    width: var(--gap);
+                    height: 0.8rem;
+
+                    background-color: $color-primary;
+                }
+
+                &::before {
+                    left: 0;
+                    transform: translateY(-100%) translateX(-100%);
+                }
+
+                &::after {
+                    right: 0;
+                    left: initial;
+                    transform: translateY(-100%) translateX(100%);
+                }
+            }
+
+            &:nth-child(3) {
+                transform: translateY(3rem);
+            }
+        }
+    }
+}

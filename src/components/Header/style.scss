@@ -1,0 +1,103 @@
+@import '@/vars';
+
+.Header {
+    &__container {
+        position: relative;
+
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+        padding-top: 1rem;
+        padding-bottom: 1rem;
+    }
+
+    &__nav,
+    &__nav-items,
+    &__login {
+        display: flex;
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    &__nav {
+        position: absolute;
+        top: -999px;
+        left: $main-shift;
+        right: $main-shift;
+
+        padding: 2rem;
+        background-color: $color-primary-alt;
+        border-radius: 0.5rem;
+        text-align: center;
+
+        transition: all ease-in-out 0.3s;
+
+        &.active {
+            top: 100%;
+        }
+    }
+
+    &__nav-items {
+        border-bottom: 1px solid gray;
+        padding-bottom: 2rem;
+    }
+
+    &__link {
+        padding: 1rem 0;
+
+        color: #fff;
+        font-weight: 700;
+        text-decoration: none;
+        font-size: 1.5rem;
+    }
+
+    &__login {
+        padding-top: 2rem;
+    }
+
+    @media screen and (min-width: 666px) {
+        &__nav,
+        &__nav-items,
+        &__login {
+            flex-direction: row;
+            padding: 0;
+        }
+
+        &__nav {
+            position: initial;
+
+            width: 100%;
+            justify-content: space-between;
+
+            background-color: transparent;
+        }
+
+        &__nav-items {
+            border-bottom: none;
+        }
+
+        &__login &__link:last-child {
+            padding: 1rem 2.5rem;
+        }
+
+        &__link {
+            padding: 1rem 0.75rem;
+
+            font-size: 1rem;
+            color: $color-text;
+
+            &:hover {
+                color: $color-text-alt;
+            }
+        }
+
+        &__logo {
+            margin-right: 1.25rem;
+        }
+
+        &__hamburger {
+            display: none;
+        }
+    }
+}
