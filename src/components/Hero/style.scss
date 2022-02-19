@@ -1,4 +1,5 @@
-@import '@/vars';
+@use '@/styles/breakpoints' as bp;
+@use '@/styles/vars' as *;
 
 .Hero {
     &__container {
@@ -35,7 +36,7 @@
         color: $color-text-alt;
     }
 
-    @media screen and (min-width: 767px) {
+    @media screen and (min-width: bp.$md) {
         &__container {
             grid-template-columns: repeat(2, 1fr);
             gap: 2.5rem;

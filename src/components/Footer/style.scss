@@ -1,4 +1,5 @@
-@import '@/vars';
+@use '@/styles/breakpoints' as bp;
+@use '@/styles/vars' as *;
 
 .Footer {
     background-color: hsl(255, 11%, 22%);
@@ -15,7 +16,7 @@
 
     &__logo {
         path {
-            fill: #fff;
+            fill: $color-accent;
         }
     }
 
@@ -24,7 +25,7 @@
 
         &-title {
             font-size: 1.2rem;
-            color: #fff;
+            color: $color-accent;
 
             margin: 0;
             margin-bottom: 1.2rem;
@@ -55,10 +56,14 @@
         display: flex;
         align-items: center;
         justify-content: center;
-        gap: 0.5rem;
 
         &-item {
-            padding: 1rem;
+            width: 50px;
+            height: 50px;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
 
             &:hover path {
                 fill: $color-primary;
@@ -66,9 +71,9 @@
         }
     }
 
-    @media screen and (min-width: 767px) {
+    @media screen and (min-width: bp.$md) {
         &__container {
-            grid-template-columns: 2fr repeat(4, 1fr);
+            grid-template-columns: repeat(5, 1fr);
         }
 
         &__item {
@@ -79,6 +84,12 @@
 
         &__social {
             align-items: flex-start;
+        }
+    }
+
+    @media screen and (min-width: bp.$lg) {
+        &__container {
+            grid-template-columns: 2fr repeat(4, 1fr);
         }
     }
 }

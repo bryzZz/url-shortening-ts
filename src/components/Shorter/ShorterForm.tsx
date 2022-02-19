@@ -1,38 +1,59 @@
-import React, { useEffect, useState } from 'react';
+import React from 'react';
+import { useForm, SubmitHandler } from 'react-hook-form';
+import { useAppDispatch, useAppSelector } from '../../hooks';
+import { createShortLink } from '../../store/slice/linkSlice';
+
+type FormValues = {
+    url: string;
+};
 
 export const ShorterForm: React.FC = () => {
-    const [isError, setIsError] = useState<boolean>(false);
-    const [value, setValue] = useState<string>('');
+    const dispatch = useAppDispatch();
+    const loading = useAppSelector((state) => state.links.loading);
 
-    const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
-        event.preventDefault();
+    const {
+        register,
+        handleSubmit,
+        formState: { errors },
+        reset,
+    } = useForm<FormValues>({
+        mode: 'onSubmit',
+    });
+
+    const onSubmit: SubmitHandler<FormValues> = ({ url }) => {
+        dispatch(createShortLink(url));
+        reset();
     };
-
-    const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
-        setValue(event.target.value);
-    };
-
-    useEffect(() => {
-        if (value === '') {
-            setIsError(true);
-        } else {
-            setIsError(false);
-        }
-    }, [value]);
 
     return (
-        <form className='Shorter__form' onSubmit={handleSubmit}>
+        <form
+            className='Shorter__form'
+            autoComplete='off'
+            onSubmit={handleSubmit(onSubmit)}
+        >
             <input
-                value={value}
-                onChange={handleChange}
-                className={`Shorter__input${isError ? ' error' : ''}`}
+                {...register('url', {
+                    required: 'Please add a link',
+                    pattern: {
+                        value: /(http(s)?:\/\/.)?(www\.)?[-a-zA-Z0-9@:%._\+~#=]{2,256}\.[a-z]{2,6}\b([-a-zA-Z0-9@:%_\+.~#?&//=]*)/g,
+                        message: 'Please enter a valid url',
+                    },
+                })}
+                className={`Shorter__input${errors.url ? ' error' : ''}`}
                 type='text'
                 placeholder='Shorten a link here...'
+                disabled={loading === 'loading'}
             />
-            {isError && <p className='Shorter__error'>Please add a link</p>}
-            <button className='primary-link Shorter__button' type='submit'>
+            <button
+                className='primary-link Shorter__button'
+                type='submit'
+                disabled={loading === 'loading'}
+            >
                 Shorten&nbsp;It!
             </button>
+            {errors.url && (
+                <p className='Shorter__error'>{errors.url.message}</p>
+            )}
         </form>
     );
 };

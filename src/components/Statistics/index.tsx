@@ -3,7 +3,7 @@ import './style.scss';
 
 export const Statistics: React.FC = () => {
     return (
-        <div className='Statistics'>
+        <section className='Statistics'>
             <div className='container Statistics__container'>
                 <h3 className='Statistics__title'>Advanced Statistics</h3>
                 <p className='Statistics__text'>
@@ -82,6 +82,6 @@ export const Statistics: React.FC = () => {
                     </div>
                 </div>
             </div>
-        </div>
+        </section>
     );
 };

@@ -4,7 +4,7 @@ import HeroImg from 'images/illustration-working.svg';
 
 export const Hero: React.FC = () => {
     return (
-        <div className='Hero'>
+        <section className='Hero'>
             <div className='Hero__container'>
                 <img className='Hero__img' src={HeroImg} alt='working' />
                 <div className='Hero__content'>
@@ -20,6 +20,6 @@ export const Hero: React.FC = () => {
                     </a>
                 </div>
             </div>
-        </div>
+        </section>
     );
 };

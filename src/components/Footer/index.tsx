@@ -1,16 +1,13 @@
 import React from 'react';
 import './style.scss';
-// @ts-ignore: Unreachable code error
-import Logo from 'images/logo.svg?component';
+import { Logo } from '../Logo';
 
 export const Footer: React.FC = () => {
     return (
         <footer className='Footer'>
             <div className='container Footer__container'>
                 <div className='Footer__item'>
-                    <a href='/' className='logo Footer__logo'>
-                        <Logo className='logo__img' alt='logo' />
-                    </a>
+                    <Logo className='Footer__logo' />
                 </div>
                 <div className='Footer__item'>
                     <h5 className='Footer__item-title'>Features</h5>

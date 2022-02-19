@@ -1,18 +1,15 @@
 import React, { useState } from 'react';
 import './style.scss';
-// @ts-ignore: Unreachable code error
-import Logo from 'images/logo.svg?component';
 import { Squash as Hamburger } from 'hamburger-react';
+import { Logo } from '../Logo';
 
 export const Header: React.FC = () => {
     const [isOpen, setOpen] = useState<boolean>(false);
 
     return (
-        <footer className='Header'>
+        <header className='Header'>
             <div className='container Header__container'>
-                <a href='/' className='logo Header__logo'>
-                    <Logo className='logo__img' alt='logo' />
-                </a>
+                <Logo className='Header__logo' />
                 <nav className={'Header__nav' + (isOpen ? ' active' : '')}>
                     <div className='Header__nav-items'>
                         <a href='/' className='Header__link'>
@@ -42,6 +39,6 @@ export const Header: React.FC = () => {
                     />
                 </div>
             </div>
-        </footer>
+        </header>
     );
 };

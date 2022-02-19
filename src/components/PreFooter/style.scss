@@ -1,8 +1,9 @@
-@import '@/vars';
+@use '@/styles/breakpoints' as bp;
+@use '@/styles/vars' as *;
 
 .PreFooter {
     background-image: url(images/bg-boost-mobile.svg);
-    background-color: $color-primary-alt;
+    background-color: $color-secondary;
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
@@ -15,14 +16,14 @@
     }
 
     &__title {
-        color: #fff;
+        color: $color-accent;
         font-size: 2rem;
         line-height: 1.1em;
         margin: 0;
         margin-bottom: 2rem;
     }
 
-    @media screen and (min-width: 767px) {
+    @media screen and (min-width: bp.$md) {
         background-image: url(images/bg-boost-desktop.svg);
     }
 }
