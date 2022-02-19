@@ -3,8 +3,14 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { useAppSelector } from '../../hooks';
 
 export const ShorterLinks: React.FC = () => {
-    const [copyToggle, setCopyToggle] = useState<boolean>(false);
+    const [copiedLink, setCopiedLink] = useState<string | null>(null);
     const links = useAppSelector((state) => state.links.items);
+
+    const copyToClipboard = (link: string): void => {
+        navigator.clipboard.writeText(link).then(() => {
+            setCopiedLink(link);
+        });
+    };
 
     if (links.length === 0) return null;
 
@@ -25,11 +31,17 @@ export const ShorterLinks: React.FC = () => {
                         </div>
                         <button
                             className={`Shorter__link-copy${
-                                copyToggle ? ' copied' : ''
+                                copiedLink === link.full_short_link2
+                                    ? ' copied'
+                                    : ''
                             }`}
-                            onClick={() => setCopyToggle((prev) => !prev)}
+                            onClick={() =>
+                                copyToClipboard(link.full_short_link2)
+                            }
                         >
-                            {!copyToggle ? 'Copy' : 'Copied!'}
+                            {copiedLink === link.full_short_link2
+                                ? 'Copied!'
+                                : 'Copy'}
                         </button>
                     </motion.div>
                 </AnimatePresence>

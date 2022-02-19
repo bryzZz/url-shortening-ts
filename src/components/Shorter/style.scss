@@ -84,6 +84,8 @@
 
             cursor: pointer;
 
+            transition: all 0.2s;
+
             &.copied {
                 background-color: hsl(260, 8%, 14%);
             }
@@ -126,6 +128,7 @@
             }
 
             &-copy {
+                font-size: 1rem;
                 margin: 0;
                 flex-basis: 100px;
                 justify-self: flex-end;

@@ -68,8 +68,8 @@
         }
 
         &-iconBlock {
-            width: 80px;
-            height: 80px;
+            width: 5rem;
+            height: 5rem;
 
             display: flex;
             justify-content: center;
@@ -107,6 +107,7 @@
 
         &__item {
             padding: 0 clamp(1rem, 3vw, 2rem) 2rem;
+            text-align: left;
 
             &:nth-child(2) {
                 transform: translateY(1.5rem);
@@ -135,6 +136,10 @@
 
             &:nth-child(3) {
                 transform: translateY(3rem);
+            }
+
+            &-iconBlock {
+                transform: translateY(-50%) translateX(-90%);
             }
         }
     }
