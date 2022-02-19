@@ -1,4 +1,5 @@
 import React from 'react';
+import { Button } from '../Button';
 import './style.scss';
 
 export const PreFooter: React.FC = () => {
@@ -6,9 +7,9 @@ export const PreFooter: React.FC = () => {
         <section className='PreFooter'>
             <div className='container PreFooter__container'>
                 <h3 className='PreFooter__title'>Boost your links today</h3>
-                <a href='/' className='primary-link PreFooter__link'>
-                    Get Started
-                </a>
+                <Button variant='link' href='/' styleVariant='round'>
+                    Get&nbsp;Started
+                </Button>
             </div>
         </section>
     );

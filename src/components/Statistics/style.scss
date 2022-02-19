@@ -50,7 +50,7 @@
                 position: absolute;
                 left: 50%;
 
-                width: 0.8rem;
+                width: 0.7rem;
                 height: var(--gap);
 
                 background-color: $color-primary;
@@ -67,7 +67,7 @@
             }
         }
 
-        &-iconBlock {
+        &-icon {
             width: 5rem;
             height: 5rem;
 
@@ -117,7 +117,7 @@
                     top: 50%;
 
                     width: var(--gap);
-                    height: 0.8rem;
+                    height: 0.7rem;
 
                     background-color: $color-primary;
                 }
@@ -138,7 +138,7 @@
                 transform: translateY(3rem);
             }
 
-            &-iconBlock {
+            &-icon {
                 transform: translateY(-50%) translateX(-90%);
             }
         }

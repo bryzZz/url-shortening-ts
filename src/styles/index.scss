@@ -22,24 +22,3 @@ body {
     margin: 0 auto;
     padding: 0 $main-shift;
 }
-
-.primary-link {
-    font-size: 1.2rem;
-    color: $color-accent;
-    text-decoration: none;
-    font-weight: 700;
-
-    padding: 1rem 2.5rem;
-    background-color: $color-primary;
-    border: none;
-    border-radius: 2rem;
-    cursor: pointer;
-
-    &:hover {
-        background-color: lighten($color: $color-primary, $amount: 5);
-    }
-
-    &:active {
-        background-color: lighten($color: $color-primary, $amount: 10);
-    }
-}

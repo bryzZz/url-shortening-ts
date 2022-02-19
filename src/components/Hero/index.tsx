@@ -1,6 +1,7 @@
 import React from 'react';
 import './style.scss';
 import HeroImg from 'images/illustration-working.svg';
+import { Button } from '../Button';
 
 export const Hero: React.FC = () => {
     return (
@@ -15,9 +16,9 @@ export const Hero: React.FC = () => {
                         Build your brand’s recognition and get detailed insights
                         on how your links are performing.
                     </p>
-                    <a href='/' className='primary-link Hero__link'>
+                    <Button variant='link' href='/' styleVariant='round'>
                         Get&nbsp;Started
-                    </a>
+                    </Button>
                 </div>
             </div>
         </section>

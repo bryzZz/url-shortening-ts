@@ -1,0 +1,27 @@
+.Icon {
+    display: inline-grid;
+    place-items: center;
+
+    &--small {
+        width: 32px;
+        height: 32px;
+    }
+
+    &--medium {
+        width: 48px;
+        height: 48px;
+
+        & > svg {
+            transform: scale(110%);
+        }
+    }
+
+    &--big {
+        width: 56px;
+        height: 56px;
+
+        & > svg {
+            transform: scale(120%);
+        }
+    }
+}

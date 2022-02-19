@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { useAppSelector } from '../../hooks';
+import { Button } from '../Button';
 
 export const ShorterLinks: React.FC = () => {
     const [copiedLink, setCopiedLink] = useState<string | null>(null);
@@ -29,7 +30,10 @@ export const ShorterLinks: React.FC = () => {
                         <div className='Shorter__link-short'>
                             {link.full_short_link2}
                         </div>
-                        <button
+                        <Button
+                            variant='button'
+                            styleVariant='square'
+                            size='small'
                             className={`Shorter__link-copy${
                                 copiedLink === link.full_short_link2
                                     ? ' copied'
@@ -42,7 +46,7 @@ export const ShorterLinks: React.FC = () => {
                             {copiedLink === link.full_short_link2
                                 ? 'Copied!'
                                 : 'Copy'}
-                        </button>
+                        </Button>
                     </motion.div>
                 </AnimatePresence>
             ))}

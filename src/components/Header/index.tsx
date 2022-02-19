@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import './style.scss';
 import { Squash as Hamburger } from 'hamburger-react';
 import { Logo } from '../Logo';
+import { Button } from '../Button';
 
 export const Header: React.FC = () => {
     const [isOpen, setOpen] = useState<boolean>(false);
@@ -26,9 +27,9 @@ export const Header: React.FC = () => {
                         <a href='/' className='Header__link'>
                             Login
                         </a>
-                        <a href='/' className='primary-link Header__link'>
+                        <Button variant='link' styleVariant='round' href='/'>
                             Sign&nbsp;Up
-                        </a>
+                        </Button>
                     </div>
                 </nav>
                 <div className='Header__hamburger'>

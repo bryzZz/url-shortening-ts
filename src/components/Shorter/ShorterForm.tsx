@@ -2,6 +2,7 @@ import React from 'react';
 import { useForm, SubmitHandler } from 'react-hook-form';
 import { useAppDispatch, useAppSelector } from '../../hooks';
 import { createShortLink } from '../../store/slice/linkSlice';
+import { Button } from '../Button';
 
 type FormValues = {
     url: string;
@@ -44,13 +45,14 @@ export const ShorterForm: React.FC = () => {
                 placeholder='Shorten a link here...'
                 disabled={loading === 'loading'}
             />
-            <button
-                className='primary-link Shorter__button'
+            <Button
+                variant='button'
+                styleVariant='square'
+                className='Shorter__button'
                 type='submit'
-                disabled={loading === 'loading'}
             >
                 Shorten&nbsp;It!
-            </button>
+            </Button>
             {errors.url && (
                 <p className='Shorter__error'>{errors.url.message}</p>
             )}
