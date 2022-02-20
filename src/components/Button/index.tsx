@@ -8,7 +8,7 @@ interface IButtonProps {
     href?: string;
     type?: 'button' | 'submit' | 'reset' | undefined;
     className?: string;
-    onClick(): void;
+    onClick?(): void;
 }
 
 export const Button: React.FC<IButtonProps> = ({

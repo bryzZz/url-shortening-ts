@@ -1,6 +1,6 @@
 import React from 'react';
 import './style.scss';
-import HeroImg from 'images/illustration-working.svg';
+import HeroImg from './illustration-working.svg';
 import { Button } from '../Button';
 
 export const Hero: React.FC = () => {

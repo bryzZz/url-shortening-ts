@@ -2,7 +2,7 @@
 @use '@/styles/vars' as *;
 
 .PreFooter {
-    background-image: url(images/bg-boost-mobile.svg);
+    background-image: url(./bg-boost-mobile.svg);
     background-color: $color-primary-200;
     background-size: cover;
     background-repeat: no-repeat;
@@ -24,6 +24,6 @@
     }
 
     @media screen and (min-width: bp.$md) {
-        background-image: url(images/bg-boost-desktop.svg);
+        background-image: url(./bg-boost-desktop.svg);
     }
 }
