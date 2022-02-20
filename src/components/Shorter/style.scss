@@ -11,7 +11,7 @@
         grid-template-columns: 1fr;
 
         background-image: url(images/bg-shorten-mobile.svg);
-        background-color: $color-secondary;
+        background-color: $color-primary-200;
         background-repeat: no-repeat;
         background-position: top right;
 
@@ -29,14 +29,14 @@
         width: 100%;
 
         &.error {
-            border-color: $color-error;
-            color: $color-error;
+            border-color: $color-secondary;
+            color: $color-secondary;
         }
     }
 
     &__error {
         font-size: 0.9rem;
-        color: $color-error;
+        color: $color-secondary;
         margin: 0;
         padding-top: 0.3rem;
     }
@@ -47,23 +47,23 @@
 
     &__link {
         font-size: 1rem;
-        background-color: $color-accent;
+        background-color: $color-neutral-100;
         margin: 1.5rem 0;
         padding: 0.5rem 0 1.5rem;
 
         border-radius: 0.5rem;
 
         &-initial {
-            color: $color-title;
+            color: $color-neutral-400;
             white-space: nowrap;
             overflow: hidden;
             text-overflow: ellipsis;
             padding: 0.75rem 1.5rem;
-            border-bottom: 1px solid $color-title;
+            border-bottom: 1px solid $color-neutral-400;
         }
 
         &-short {
-            color: $color-primary;
+            color: $color-primary-100;
             padding: 0.75rem 1.5rem;
         }
 

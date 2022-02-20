@@ -16,7 +16,7 @@
 
     &__logo {
         path {
-            fill: $color-accent;
+            fill: $color-neutral-100;
         }
     }
 
@@ -25,7 +25,7 @@
 
         &-title {
             font-size: 1.2rem;
-            color: $color-accent;
+            color: $color-neutral-100;
 
             margin: 0;
             margin-bottom: 1.2rem;
@@ -42,12 +42,12 @@
         }
 
         &-link {
-            color: $color-text-alt;
+            color: $color-neutral-300;
             text-decoration: none;
             padding: 0.3rem;
 
             &:hover {
-                color: $color-primary;
+                color: $color-primary-100;
             }
         }
     }
@@ -59,7 +59,7 @@
 
         &-item {
             &:hover path {
-                fill: $color-primary;
+                fill: $color-primary-100;
             }
         }
     }

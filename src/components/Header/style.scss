@@ -28,7 +28,7 @@
         right: $main-shift;
 
         padding: 2rem;
-        background-color: $color-secondary;
+        background-color: $color-primary-200;
         border-radius: 0.5rem;
         text-align: center;
 
@@ -47,7 +47,7 @@
     &__link {
         padding: 1rem 0;
 
-        color: $color-accent;
+        color: $color-neutral-100;
         font-weight: 700;
         text-decoration: none;
         font-size: 1.5rem;
@@ -94,10 +94,10 @@
             padding: 1rem 0.75rem;
 
             font-size: 1rem;
-            color: $color-text;
+            color: $color-neutral-200;
 
             &:hover {
-                color: $color-text-alt;
+                color: $color-neutral-300;
             }
         }
 
