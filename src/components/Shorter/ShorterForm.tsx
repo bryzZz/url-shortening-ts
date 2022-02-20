@@ -1,7 +1,6 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { useForm, SubmitHandler } from 'react-hook-form';
-import { useAppDispatch, useAppSelector } from '../../hooks';
-import { createShortLink } from '../../store/slice/linkSlice';
+import { LinksContext } from '../../LinksContext';
 import { Button } from '../Button';
 
 type FormValues = {
@@ -9,9 +8,7 @@ type FormValues = {
 };
 
 export const ShorterForm: React.FC = () => {
-    const dispatch = useAppDispatch();
-    const loading = useAppSelector((state) => state.links.loading);
-
+    const { addLink, state } = useContext(LinksContext);
     const {
         register,
         handleSubmit,
@@ -22,7 +19,7 @@ export const ShorterForm: React.FC = () => {
     });
 
     const onSubmit: SubmitHandler<FormValues> = ({ url }) => {
-        dispatch(createShortLink(url));
+        addLink(url);
         reset();
     };
 
@@ -43,7 +40,7 @@ export const ShorterForm: React.FC = () => {
                 className={`Shorter__input${errors.url ? ' error' : ''}`}
                 type='text'
                 placeholder='Shorten a link here...'
-                disabled={loading === 'loading'}
+                disabled={state === 'loading'}
             />
             <Button
                 variant='button'

@@ -1,11 +1,11 @@
-import React, { useState } from 'react';
+import React, { useContext, useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { useAppSelector } from '../../hooks';
 import { Button } from '../Button';
+import { LinksContext } from '../../LinksContext';
 
 export const ShorterLinks: React.FC = () => {
     const [copiedLink, setCopiedLink] = useState<string | null>(null);
-    const links = useAppSelector((state) => state.links.items);
+    const { links } = useContext(LinksContext);
 
     const copyToClipboard = (link: string): void => {
         navigator.clipboard.writeText(link).then(() => {
@@ -25,27 +25,19 @@ export const ShorterLinks: React.FC = () => {
                         animate={{ height: 'initial' }}
                     >
                         <div className='Shorter__link-initial'>
-                            {link.original_link}
+                            {link.initial}
                         </div>
-                        <div className='Shorter__link-short'>
-                            {link.full_short_link2}
-                        </div>
+                        <div className='Shorter__link-short'>{link.short}</div>
                         <Button
                             variant='button'
                             styleVariant='square'
                             size='small'
                             className={`Shorter__link-copy${
-                                copiedLink === link.full_short_link2
-                                    ? ' copied'
-                                    : ''
+                                copiedLink === link.short ? ' copied' : ''
                             }`}
-                            onClick={() =>
-                                copyToClipboard(link.full_short_link2)
-                            }
+                            onClick={() => copyToClipboard(link.short)}
                         >
-                            {copiedLink === link.full_short_link2
-                                ? 'Copied!'
-                                : 'Copy'}
+                            {copiedLink === link.short ? 'Copied!' : 'Copy'}
                         </Button>
                     </motion.div>
                 </AnimatePresence>
