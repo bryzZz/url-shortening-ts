@@ -36,13 +36,12 @@
     }
 
     &__item {
+        position: relative;
         padding: 0 1.5rem 2rem;
         background-color: $color-neutral-100;
         border-radius: 0.2rem;
 
         &:nth-child(2) {
-            position: relative;
-
             &::before,
             &::after {
                 content: '';
@@ -110,7 +109,7 @@
             text-align: left;
 
             &:nth-child(2) {
-                transform: translateY(1.5rem);
+                top: 1.5rem;
 
                 &::before,
                 &::after {
@@ -135,7 +134,7 @@
             }
 
             &:nth-child(3) {
-                transform: translateY(3rem);
+                top: 3rem;
             }
 
             &-icon {

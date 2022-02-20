@@ -3,7 +3,7 @@ export * from './Header';
 export * from './Hero';
 export * from './Shorter';
 export * from './Statistics';
-export * from './PreFooter';
+export * from './CallToAction';
 export * from './Footer';
 
 export * from './Logo';

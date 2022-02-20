@@ -1,18 +1,67 @@
 import React from 'react';
+import { motion, Variants } from 'framer-motion';
 import { Icon } from '../Icon';
 import './style.scss';
 
+const animation: Variants = {
+    hidden: {
+        y: -100,
+        opacity: 0,
+    },
+    visible: (custom: number) => ({
+        y: 0,
+        opacity: 1,
+        transition: { delay: custom * 0.1 },
+    }),
+};
+
+const itemAnimation: Variants = {
+    hidden: {
+        y: -100,
+        opacity: 0,
+    },
+    visible: (custom: number) => ({
+        y: 0,
+        opacity: 1,
+        transition: { delay: custom * 0.2 },
+    }),
+};
+
 export const Statistics: React.FC = () => {
     return (
-        <section className='Statistics'>
+        <motion.section
+            initial='hidden'
+            whileInView='visible'
+            viewport={{ amount: 0.2, once: true }}
+            className='Statistics'
+        >
             <div className='container Statistics__container'>
-                <h3 className='Statistics__title'>Advanced Statistics</h3>
-                <p className='Statistics__text'>
+                <motion.h3
+                    variants={animation}
+                    custom={1}
+                    className='Statistics__title'
+                >
+                    Advanced Statistics
+                </motion.h3>
+                <motion.p
+                    variants={animation}
+                    custom={2}
+                    className='Statistics__text'
+                >
                     Track how your links are performing across the web with our
                     advanced statistics dashboard.
-                </p>
-                <div className='Statistics__items'>
-                    <div className='Statistics__item'>
+                </motion.p>
+                <motion.div
+                    initial='hidden'
+                    whileInView='visible'
+                    viewport={{ amount: 0.2, once: true }}
+                    className='Statistics__items'
+                >
+                    <motion.article
+                        variants={itemAnimation}
+                        custom={1}
+                        className='Statistics__item'
+                    >
                         <div className='Statistics__item-icon'>
                             <Icon variant='brand-recognition' />
                         </div>
@@ -24,8 +73,12 @@ export const Statistics: React.FC = () => {
                             Generic links don&rsquo;t mean a&nbsp;thing. Branded
                             links help instil confidence in&nbsp;your content.
                         </p>
-                    </div>
-                    <div className='Statistics__item'>
+                    </motion.article>
+                    <motion.article
+                        variants={itemAnimation}
+                        custom={2}
+                        className='Statistics__item'
+                    >
                         <div className='Statistics__item-icon'>
                             <Icon variant='detailed-records' />
                         </div>
@@ -37,8 +90,12 @@ export const Statistics: React.FC = () => {
                             Knowing when and where people engage with your
                             content helps inform better decisions.
                         </p>
-                    </div>
-                    <div className='Statistics__item'>
+                    </motion.article>
+                    <motion.article
+                        variants={itemAnimation}
+                        custom={3}
+                        className='Statistics__item'
+                    >
                         <div className='Statistics__item-icon'>
                             <Icon variant='fully-customizable' />
                         </div>
@@ -50,9 +107,9 @@ export const Statistics: React.FC = () => {
                             through customizable links, supercharging audience
                             engagement.
                         </p>
-                    </div>
-                </div>
+                    </motion.article>
+                </motion.div>
             </div>
-        </section>
+        </motion.section>
     );
 };

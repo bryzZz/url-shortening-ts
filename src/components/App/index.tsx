@@ -4,7 +4,7 @@ import {
     Hero,
     Shorter,
     Statistics,
-    PreFooter,
+    CallToAction,
     Footer,
 } from 'components';
 
@@ -15,7 +15,7 @@ export const App: React.FC = () => {
             <Hero />
             <Shorter />
             <Statistics />
-            <PreFooter />
+            <CallToAction />
             <Footer />
         </>
     );
